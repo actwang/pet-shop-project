@@ -7,7 +7,7 @@
     "breed": "Scottish Terrier",
     "location": "Lisco, Alabama",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2020.01.23","DAP*-2020.02.23","DAP*-2020.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 1,
@@ -17,7 +17,7 @@
     "breed": "Scottish Terrier",
     "location": "Tooleville, West Virginia",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2020.01.23","DAP*-2020.02.23","DAP*-2020.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@
     "breed": "French Bulldog",
     "location": "Freeburn, Idaho",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2021.01.23","DAP*-2021.02.23","DAP*-2021.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 3,
@@ -37,7 +37,7 @@
     "breed": "Boxer",
     "location": "Camas, Pennsylvania",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2021.01.23","DAP*-2021.02.23","DAP*-2021.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 4,
@@ -47,7 +47,7 @@
     "breed": "French Bulldog",
     "location": "Gerber, South Dakota",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2021.01.23","DAP*-2021.02.23","DAP*-2021.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "breed": "French Bulldog",
     "location": "Innsbrook, Illinois",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2020.01.23","DAP*-2020.02.23","DAP*-2020.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 6,
@@ -67,7 +67,7 @@
     "breed": "Golden Retriever",
     "location": "Soudan, Louisiana",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2020.01.23","DAP*-2020.02.23","DAP*-2020.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 7,
@@ -77,7 +77,7 @@
     "breed": "Golden Retriever",
     "location": "Jacksonwald, Palau",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2020.01.23","DAP*-2020.02.23","DAP*-2020.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 8,
@@ -87,7 +87,7 @@
     "breed": "French Bulldog",
     "location": "Honolulu, Hawaii",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2021.01.23","DAP*-2021.02.23","DAP*-2021.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 9,
@@ -97,7 +97,7 @@
     "breed": "Boxer",
     "location": "Matheny, Utah",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2020.01.23","DAP*-2020.02.23","DAP*-2020.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 10,
@@ -107,7 +107,7 @@
     "breed": "Boxer",
     "location": "Tyhee, Indiana",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2021.01.23","DAP*-2021.02.23","DAP*-2021.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 11,
@@ -117,7 +117,7 @@
     "breed": "Scottish Terrier",
     "location": "Windsor, Montana",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2020.01.23","DAP*-2020.02.23","DAP*-2020.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 12,
@@ -127,7 +127,7 @@
     "breed": "French Bulldog",
     "location": "Kingstowne, Nevada",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2020.01.23","DAP*-2020.02.23","DAP*-2020.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 13,
@@ -137,7 +137,7 @@
     "breed": "Golden Retriever",
     "location": "Sultana, Massachusetts",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2019.01.23","DAP*-2019.02.23","DAP*-2019.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 14,
@@ -147,7 +147,7 @@
     "breed": "Golden Retriever",
     "location": "Broadlands, Oregon",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2021.01.23","DAP*-2021.02.23","DAP*-2021.03.23","Rabies**-2022.03.23"]
   },
   {
     "id": 15,
@@ -157,6 +157,6 @@
     "breed": "Golden Retriever",
     "location": "Dawn, Wisconsin",
     "adopted": "No",
-    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
+    "vaccinationHistory": ["DAP*-2021.01.23","DAP*-2021.02.23","DAP*-2021.03.23","Rabies**-2022.03.23"]
   }
 ]
