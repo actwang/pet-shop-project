@@ -17,11 +17,49 @@ App = {
         petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
         petTemplate.find('.adoption-status').text(data[i].adopted);
 
+        // Check if vaccination history exists
+        if (data[i].vaccinationHistory) {
+          var vaccinationLink = data[i].vaccinationHistory;
+          var vaccinationStatusHTML = '<a href="#" class="vaccination-link" data-vaccination="' + vaccinationLink +  '">View Vaccination History</a>';
+          petTemplate.find('.vaccination-status').html(vaccinationStatusHTML);
+        }
+
         petsRow.append(petTemplate.html());
       }
+      // Register click event for vaccination link
+      $('.vaccination-link').on('click', function(event) {
+        event.preventDefault();
+        var vaccinationLink = $(this).data('vaccination');
+        
+        // Render vaccination history
+        App.renderVaccinationHistory(vaccinationLink);
+      });
     });
 
     return await App.initWeb3();
+  },
+
+  renderVaccinationHistory: function(vaccinationLink) {
+      // Render the vaccination history
+      console.log(vaccinationLink)
+      let text = vaccinationLink;
+      const vaccine = text.split(",");
+      var vaccinationHistoryHTML = '<h3>Vaccination History for Pet </h3>';
+      vaccinationHistoryHTML += '<ul>';
+      for (var i = 0; i < vaccine.length; i++) {
+        //var vaccine = vaccinationLink[i].vaccine;
+        //var date = vaccinationLink[i].date;
+        
+        vaccinationHistoryHTML += '<li>' + vaccine[i] + '</li>';
+        //vaccinationHistoryHTML += '<li>' + vaccine + ' - ' + date + '</li>';
+      }
+      vaccinationHistoryHTML += '</ul>';
+  
+      $('#vaccinationHistoryModalBody').html(vaccinationHistoryHTML);
+  
+      
+      $('#vaccinationHistoryModal').modal('show');
+    
   },
 
   initWeb3: async function() {

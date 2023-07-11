@@ -6,7 +6,8 @@
     "age": 3,
     "breed": "Scottish Terrier",
     "location": "Lisco, Alabama",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 1,
@@ -15,7 +16,8 @@
     "age": 3,
     "breed": "Scottish Terrier",
     "location": "Tooleville, West Virginia",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 2,
@@ -24,7 +26,8 @@
     "age": 2,
     "breed": "French Bulldog",
     "location": "Freeburn, Idaho",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 3,
@@ -33,7 +36,8 @@
     "age": 2,
     "breed": "Boxer",
     "location": "Camas, Pennsylvania",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 4,
@@ -42,7 +46,8 @@
     "age": 2,
     "breed": "French Bulldog",
     "location": "Gerber, South Dakota",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 5,
@@ -51,7 +56,8 @@
     "age": 3,
     "breed": "French Bulldog",
     "location": "Innsbrook, Illinois",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 6,
@@ -60,7 +66,8 @@
     "age": 3,
     "breed": "Golden Retriever",
     "location": "Soudan, Louisiana",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 7,
@@ -69,7 +76,8 @@
     "age": 3,
     "breed": "Golden Retriever",
     "location": "Jacksonwald, Palau",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 8,
@@ -78,7 +86,8 @@
     "age": 2,
     "breed": "French Bulldog",
     "location": "Honolulu, Hawaii",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 9,
@@ -87,7 +96,8 @@
     "age": 3,
     "breed": "Boxer",
     "location": "Matheny, Utah",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 10,
@@ -96,7 +106,8 @@
     "age": 2,
     "breed": "Boxer",
     "location": "Tyhee, Indiana",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 11,
@@ -105,7 +116,8 @@
     "age": 3,
     "breed": "Scottish Terrier",
     "location": "Windsor, Montana",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 12,
@@ -114,7 +126,8 @@
     "age": 3,
     "breed": "French Bulldog",
     "location": "Kingstowne, Nevada",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 13,
@@ -123,7 +136,8 @@
     "age": 4,
     "breed": "Golden Retriever",
     "location": "Sultana, Massachusetts",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 14,
@@ -132,7 +146,8 @@
     "age": 2,
     "breed": "Golden Retriever",
     "location": "Broadlands, Oregon",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   },
   {
     "id": 15,
@@ -141,6 +156,7 @@
     "age": 2,
     "breed": "Golden Retriever",
     "location": "Dawn, Wisconsin",
-    "adopted": "No"
+    "adopted": "No",
+    "vaccinationHistory": ["vaccinate1-2020.01.23","vaccinate1-2020.01.23","vaccinate1-2020.01.23"]
   }
 ]
