@@ -71,6 +71,7 @@ App = {
 
   bindEvents: function() {
     $(document).on('click', '.btn-adopt', App.handleAdopt);
+    $(document).on('click', '.btn-reset', App.resetAdoption);
   },
 
   markAdopted: function() {
@@ -130,10 +131,42 @@ App = {
         console.log(err.message);
       });
     });
+  },
+
+    // Function to call the resetAdoptionStatus function
+  resetAdoption: async function(e) {
+    e.preventDefault();
+    web3.eth.getAccounts(function(error, accounts) {
+      if (error) {
+        console.log(error);
+      }
     
+      var account = accounts[0];
+      var adoptionInstance;
+    
+      App.contracts.Adoption.deployed().then(function(instance) {
+        adoptionInstance = instance;
+    
+        // Execute adopt as a transaction by sending account
+        return adoptionInstance.resetAdoptionStatus({from: account});
+      }).then(function() {
+        console.log('reset success');
+        pet_num = 0;
+        custumer_list = [];
+        custumer_num = 0;
+            
+        document.getElementById('pet_num').innerHTML = pet_num;
+        document.getElementById('custumer_num').innerHTML = custumer_num;
+        return ;
+      }).catch(function(err) {
+        console.log(err.message);
+      });
+    });
+
   }
 
 };
+
 
 $(function() {
   $(window).load(function() {
