@@ -17,23 +17,31 @@ Frontend: JQuery
 To run our app, first download Ganche, a personal development blockchain server for local contract deployment and testing. To download Ganche, navigate to https://trufflesuite.com/ganache and click on Download.
 
 Next, we need truffle to compile and migrate our contracts. To install truffle cli, run:
+
 ```npm install -g truffle```
+
 For a list of instructions, run truffle help.
 Navigate to our source folder. To install all dependencies, run:
 
 ```npm i ```
 
 Now that the local environment has all required dependencies, run 
+
 ```truffle compile```
+
 to compile the smart contract. After downloading Ganache, double cilck the icon, this will generate a locally running blockchain on port 7545.
 Now run
+
 ```truffle migrate```
+
 to deploy our contracts.
 
 The easiest way to interact with the dapp is through Metamask. Install the Metamask extension form your desired browser, create an account, and copy the seed phrase into Metamask to connect to the dapp running on port 7545. This would be running as http://localhost:7545 as a new custom RPC network. 
 
 Finally, to run the frontend application, run 
+
 ```npm run dev```
+
 This will start the frontend server to display UI and let you interact with the page and adopt pets. 
 
 Refer to our demo video for a walk-through of our newly implemented features. 
