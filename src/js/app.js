@@ -231,6 +231,14 @@ App = {
             
         document.getElementById('pet_num').innerHTML = pet_num;
         document.getElementById('custumer_num').innerHTML = custumer_num;
+
+        document.getElementById('most_adopted_breed').innerHTML = "";
+        // reset buttons to clickable
+        for (i = 0; i < 16; i++) {
+            $('.panel-pet').eq(i).find('button').text('Adopt').attr('disabled', false);
+            $('.panel-pet').eq(i).find('.adoption-status').text('No');
+            App.petsData[i].adopted = 'No';
+        }
         return ;
       }).catch(function(err) {
         console.log(err.message);
