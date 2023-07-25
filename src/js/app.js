@@ -8,6 +8,7 @@ App = {
   init: async function() {
     // Load pets.
     $.getJSON('../pets.json', function(data) {
+      App.petsData = data;
       var petsRow = $('#petsRow');
       var petTemplate = $('#petTemplate');
 
@@ -103,7 +104,7 @@ App = {
       return App.markAdopted();
     });
     
-
+    
     return App.bindEvents();
   },
 
@@ -129,6 +130,7 @@ App = {
           //    set its "adopted" status to Yes.
           $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
           $('.panel-pet').eq(i).find('.adoption-status').text('Yes');
+          App.petsData[i].adopted = 'Yes'
           pet_num = pet_num + 1
           if (custumer_list.includes(adopters[i]) == false){
             custumer_num = custumer_num + 1
@@ -138,10 +140,44 @@ App = {
       }
       document.getElementById('pet_num').innerHTML = pet_num
       document.getElementById('custumer_num').innerHTML = custumer_num
+      document.getElementById('most_adopted_breed').innerHTML = App.trackMostAdoptedBreed();
+    
     }).catch(function(err) {
       console.log(err.message);
     });
-    
+  },
+
+  // Function to track the most adopted breed
+  trackMostAdoptedBreed: function() {
+    var breedsCount = {}; // Object to store the count of each breed
+    var mostAdoptedBreed = ""; // Variable to store the most adopted breed
+    var maxCount = 0; // Variable to store the maximum count
+
+    // Loop through the pets data to count the occurrences of each breed
+    for (var i = 0; i < App.petsData.length; i++) {
+      if (App.petsData[i].adopted != 'Yes'){
+        continue
+      }
+      var breed = App.petsData[i].breed;
+      
+      if (breed in breedsCount){
+        breedsCount[breed] = breedsCount[breed] + 1;
+      }
+      else {
+        breedsCount[breed] = 1
+      }
+
+      if (breedsCount[breed] > maxCount) {
+        maxCount = breedsCount[breed];
+        mostAdoptedBreed = breed;
+      }
+      else if (breedsCount[breed] == maxCount) {
+        mostAdoptedBreed =  mostAdoptedBreed + ', ' + breed
+      }
+
+    }
+
+    return mostAdoptedBreed;
   },
 
   handleAdopt: function(event) {
