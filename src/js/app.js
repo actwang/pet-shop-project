@@ -36,7 +36,7 @@ App = {
         var vaccinationLink = $(this).data('vaccination');
         
         // Render vaccination history
-        App.renderVaccinationHistory(vaccinationLink);
+        App.renderVaccinationHistory(vaccinationLink, petid);
       });
     });
 
@@ -45,17 +45,26 @@ App = {
 
   renderVaccinationHistory: function(vaccinationLink) {
       // Render the vaccination history
-      console.log(vaccinationLink)
+      web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+        var account = accounts[0];
+        var adoptionInstance;
+        App.contracts.Adoption.deployed().then(function(instance){
+          adoptionInstance = instance;
+
+          return adoptionInstance.getVaccinationRecord(petId, {from: account});
+        })
+      });
       let text = vaccinationLink;
       const vaccine = text.split(",");
       var vaccinationHistoryHTML = '<h3>Vaccination History for Pet </h3>';
       vaccinationHistoryHTML += '<ul>';
       for (var i = 0; i < vaccine.length; i++) {
-        //var vaccine = vaccinationLink[i].vaccine;
-        //var date = vaccinationLink[i].date;
         
         vaccinationHistoryHTML += '<li>' + vaccine[i] + '</li>';
-        //vaccinationHistoryHTML += '<li>' + vaccine + ' - ' + date + '</li>';
+
       }
       vaccinationHistoryHTML += '</ul>';
   
@@ -246,6 +255,8 @@ App = {
     });
 
   }
+
+  
 
 };
 
