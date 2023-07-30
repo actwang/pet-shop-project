@@ -24,7 +24,7 @@ App = {
         // Check if vaccination history exists
         if (data[i].vaccinationHistory) {
           var vaccinationLink = data[i].vaccinationHistory;
-          var vaccinationStatusHTML = '<a href="#" class="vaccination-link" data-vaccination="' + vaccinationLink +  '">View Vaccination History</a>';
+          var vaccinationStatusHTML = '<a href="#" class="vaccination-link" data-vaccination="' + vaccinationLink + '" data-id="' + i + '">View Vaccination History</a>';
           petTemplate.find('.vaccination-status').html(vaccinationStatusHTML);
         }
 
@@ -34,6 +34,7 @@ App = {
       $('.vaccination-link').on('click', function(event) {
         event.preventDefault();
         var vaccinationLink = $(this).data('vaccination');
+        var petid = $(this).data('id');
         
         // Render vaccination history
         App.renderVaccinationHistory(vaccinationLink, petid);
@@ -43,7 +44,7 @@ App = {
     return await App.initWeb3();
   },
 
-  renderVaccinationHistory: function(vaccinationLink) {
+  renderVaccinationHistory: function(vaccinationLink, petId) {
       // Render the vaccination history
       web3.eth.getAccounts(function(error, accounts) {
         if (error) {
@@ -55,23 +56,25 @@ App = {
           adoptionInstance = instance;
 
           return adoptionInstance.getVaccinationRecord(petId, {from: account});
+        }).then(function(result){
+          var vaccineName = result[0];
+          var date = result[1];
+          // now we get the vax data, render it 
+          var vaccinationHistoryHTML = '<h3>Vaccination History for Pet </h3>';
+          vaccinationHistoryHTML += '<ul>';
+          vaccinationHistoryHTML += '<il>';
+          vaccinationHistoryHTML += vaccineName;
+          vaccinationHistoryHTML += '</il>';
+          vaccinationHistoryHTML += '<il>';
+          vaccinationHistoryHTML += date;
+          vaccinationHistoryHTML += '</il>';
+          vaccinationHistoryHTML += '</ul>';
+          
+          $('#vaccinationHistoryModalBody').html(vaccinationHistoryHTML);
+      
+          $('#vaccinationHistoryModal').modal('show');
         })
       });
-      let text = vaccinationLink;
-      const vaccine = text.split(",");
-      var vaccinationHistoryHTML = '<h3>Vaccination History for Pet </h3>';
-      vaccinationHistoryHTML += '<ul>';
-      for (var i = 0; i < vaccine.length; i++) {
-        
-        vaccinationHistoryHTML += '<li>' + vaccine[i] + '</li>';
-
-      }
-      vaccinationHistoryHTML += '</ul>';
-  
-      $('#vaccinationHistoryModalBody').html(vaccinationHistoryHTML);
-  
-      
-      $('#vaccinationHistoryModal').modal('show');
     
   },
 
@@ -149,15 +152,19 @@ App = {
       }
       document.getElementById('pet_num').innerHTML = pet_num
       document.getElementById('custumer_num').innerHTML = custumer_num
-      document.getElementById('most_adopted_breed').innerHTML = App.trackMostAdoptedBreed();
+      var most_adopted_breed = App.trackMostAdoptedBreed();
+      document.getElementById('most_adopted_breed').innerHTML = most_adopted_breed;
+      return adoptionInstance.setMostAdoptedBreed(most_adopted_breed, { from: web3.eth.defaultAccount });
     
+    }).then(function(){
+      console.log("Most adopted breed updated successfully!");
     }).catch(function(err) {
       console.log(err.message);
     });
   },
 
   // Function to track the most adopted breed
-  trackMostAdoptedBreed: function() {
+  trackMostAdoptedBreed:  function() {
     var breedsCount = {}; // Object to store the count of each breed
     var mostAdoptedBreed = ""; // Variable to store the most adopted breed
     var maxCount = 0; // Variable to store the maximum count
@@ -183,8 +190,8 @@ App = {
       else if (breedsCount[breed] == maxCount) {
         mostAdoptedBreed =  mostAdoptedBreed + ', ' + breed
       }
-
     }
+    console.log(mostAdoptedBreed);
 
     return mostAdoptedBreed;
   },

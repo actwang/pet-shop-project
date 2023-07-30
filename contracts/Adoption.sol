@@ -3,9 +3,7 @@ pragma solidity ^0.5.0;
 contract Adoption {
     address public owner;
     address[16] public adopters;
-    string most;
-    uint256 customer_num;
-    uint256 pet_num;
+    string public mostAdoptedBreed;
 
     struct VaccinationRecord {
         string vaccineName;
@@ -27,7 +25,7 @@ contract Adoption {
 
         // Continue setting records for pets 8 to 15...
         vaccinationRegistry[8] = VaccinationRecord("DAP*-2021.01.23", 'July 25, 2023');
-        vaccinationRegistry[9] = VaccinationRecord("DAP*-2021.02.23", ' July 25, 2023')
+        vaccinationRegistry[9] = VaccinationRecord("DAP*-2021.02.23", ' July 25, 2023');
         vaccinationRegistry[10] = VaccinationRecord("DAP*-2021.03.23", ' July 25, 2023'); 
         vaccinationRegistry[11] = VaccinationRecord("Rabies**-2022.03.23", ' July 25, 2023'); 
 
@@ -35,6 +33,19 @@ contract Adoption {
         vaccinationRegistry[13] = VaccinationRecord("AnotherVaccine-2022.05.15", ' July 25, 2023'); 
         vaccinationRegistry[14] = VaccinationRecord("VetVaccine-2022.06.20", ' July 25, 2023'); 
         vaccinationRegistry[15] = VaccinationRecord("PetGuard-2022.07.25", ' July 25, 2023'); 
+    }
+    // Get vaccination record for a pet
+    function getVaccinationRecord(uint petId) public view returns (string memory, string memory) {
+        require(petId >= 0 && petId <= 15);
+
+        VaccinationRecord memory record = vaccinationRegistry[petId];
+        return (record.vaccineName, record.date);
+    }
+
+    // Set the most adopted breed
+    function setMostAdoptedBreed(string memory breed) public   {
+        // Update the mostAdoptedBreed state variable with the new value
+        mostAdoptedBreed = breed;
     }
 
     // Adopting a pet
@@ -59,13 +70,7 @@ contract Adoption {
         }
     }
 
-    // Get vaccination record for a pet
-    function getVaccinationRecord(uint256 petId) public view returns (string memory, uint256) {
-        require(petId >= 0 && petId <= 15);
 
-        VaccinationRecord memory record = vaccinationRegistry[petId];
-        return (record.vaccineName, record.date);
-    }
 
-    function getMostAdopted()
+
 }
