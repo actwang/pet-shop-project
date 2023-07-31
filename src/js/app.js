@@ -152,15 +152,27 @@ App = {
       }
       document.getElementById('pet_num').innerHTML = pet_num;
       document.getElementById('custumer_num').innerHTML = custumer_num;
-      App.setAdoptedPetsNum(pet_num);
-      App.setCustomerNum(custumer_num);
+      //App.setAdoptedPetsNum(pet_num);
+      //App.setCustomerNum(custumer_num);
+      web3.eth.defaultAccount = web3.eth.accounts[0];
       var most_adopted_breed = App.trackMostAdoptedBreed();
       document.getElementById('most_adopted_breed').innerHTML = most_adopted_breed;
       return adoptionInstance.setMostAdoptedBreed(most_adopted_breed, { from: web3.eth.defaultAccount });
     
     }).then(function(){
       console.log("Most adopted breed updated successfully!");
-    }).catch(function(err) {
+    }).then(function(){
+      web3.eth.defaultAccount = web3.eth.accounts[0];
+      return adoptionInstance.setCustomerNum(custumer_num, {from: web3.eth.defaultAccount});
+    }).then(function(){
+      console.log("customer number set successfully!");
+    }).then(function(){
+      web3.eth.defaultAccount = web3.eth.accounts[0];
+      return adoptionInstance.setAdoptedPetsNum(pet_num, {from: web3.eth.defaultAccount});
+    }).then(function(){
+      console.log("Adopted pets number successfully!");
+    })
+    .catch(function(err) {
       console.log(err.message);
     });
   },
@@ -249,8 +261,8 @@ App = {
             
         document.getElementById('pet_num').innerHTML = pet_num;
         document.getElementById('custumer_num').innerHTML = custumer_num;
-        App.setAdoptedPetsNum(pet_num);
-        App.setCustomerNum(custumer_num);
+        //App.setAdoptedPetsNum(pet_num);
+        //App.setCustomerNum(custumer_num);
 
         document.getElementById('most_adopted_breed').innerHTML = "";
         // reset buttons to clickable
@@ -258,9 +270,25 @@ App = {
             $('.panel-pet').eq(i).find('button').text('Adopt').attr('disabled', false);
             $('.panel-pet').eq(i).find('.adoption-status').text('No');
             App.petsData[i].adopted = 'No';
-        }
-        return ;
-      }).catch(function(err) {
+        };
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        var most_adopted_breed = "";
+        return adoptionInstance.setMostAdoptedBreed(most_adopted_breed, { from: web3.eth.defaultAccount });
+      })
+      .then(function(){
+        console.log("Most adopted breed updated successfully!");
+      }).then(function(){
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        return adoptionInstance.setCustomerNum(custumer_num, {from: web3.eth.defaultAccount});
+      }).then(function(){
+        console.log("customer number set successfully!");
+      }).then(function(){
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        return adoptionInstance.setAdoptedPetsNum(pet_num, {from: web3.eth.defaultAccount});
+      }).then(function(){
+        console.log("Adopted pets number successfully!");
+      })
+      .catch(function(err) {
         console.log(err.message);
       });
     });
