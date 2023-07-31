@@ -1,6 +1,7 @@
 pragma solidity ^0.5.0;
 
 contract Adoption {
+    string public test;
     address[16] public adopters;
     // Adopting a pet
     function adopt(uint petId) public returns (uint) {
