@@ -4,6 +4,8 @@ contract Adoption {
     address public owner;
     address[16] public adopters;
     string public mostAdoptedBreed;
+    uint256 customer_num;
+    uint256 pet_num;
 
     struct VaccinationRecord {
         string vaccineName;
@@ -47,6 +49,17 @@ contract Adoption {
         // Update the mostAdoptedBreed state variable with the new value
         mostAdoptedBreed = breed;
     }
+
+    function setCustomerNum(uint256 total_customer_num)public {
+        customer_num = total_customer_num;
+
+    }
+    function setAdoptedPetsNum(uint256 total_pet_num)public {
+        pet_num = total_pet_num;
+
+    }
+
+
 
     // Adopting a pet
     function adopt(uint petId) public returns (uint) {
