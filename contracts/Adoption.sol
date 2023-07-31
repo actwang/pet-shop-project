@@ -4,8 +4,8 @@ contract Adoption {
     address public owner;
     address[16] public adopters;
     string public mostAdoptedBreed;
-    uint256 customer_num
-    uint256 pet_num
+    uint256 customer_num;
+    uint256 pet_num;
 
     struct VaccinationRecord {
         string vaccineName;
@@ -71,12 +71,12 @@ contract Adoption {
             adopters[i] = 0x0000000000000000000000000000000000000000;
         }
     }
-    function setCustomerNum(uint256 total_customer_num)public returns(uint256){
+    function setCustomerNum(uint256 total_customer_num)public {
         
         customer_num = total_customer_num;
 
     }
-    function setAdoptedPetsNum(uint256 total_pet_num)public returns(uint256){
+    function setAdoptedPetsNum(uint256 total_pet_num)public{
         pet_num = total_pet_num;
 
     }
