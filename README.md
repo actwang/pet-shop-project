@@ -1,7 +1,5 @@
 # pet-shop-project
-This is our group's final project. We carefully picked out 5 features we thought would be most benficial to our users and updated the application accordingly. This document serves as a detailed instruction file explaining the setup and running process of the DApp. 
-
-Our group consists of Zicong Wang, Tiantian Lin, Xuwen Shuai, and Wanhe Li.
+This is the final product. We carefully crafted 5 features we thought would be most benficial to our users and updated the application accordingly. This document serves as a detailed instruction file explaining the setup and running process of the DApp. 
 
 ## Specifications
 The project uses the javascript web3 library and includes all required libraries in package.json. The project uses some level of jQuery, and does not employ other frameworks like React or Vue. 
